@@ -1,0 +1,44 @@
+<div>
+	<div class="centerTitle">
+		<h1>Vamos a cambiar la forma en la que vemos nuestra información en pantalla</h1>
+	</div>
+
+	<div>
+		<div class="cardContainer">
+			<div class="card" [class.flipped]="flipCard" (click)="onClickCard()">
+				<div class="front">
+					<h3 class="cardTitle">
+						¡¡¡ Dame Click !!!
+						<br/>
+            Hoy: {{ today | date }}
+            <br/>
+            <!-- USD - American dollar -->
+            Valor factura: {{totalBill | currency:'USD'}}
+            <br/>
+            Redeondeo Número: {{totalBill | number}}
+            <br/>
+            Minúsculas: {{text | lowercase}}
+            </h3>
+				</div> <!-- close card front -->
+
+				<div class="back">
+					<div class="content">
+						<h3 class="cardTitle">
+
+							Hoy: {{ today | date:'fullDate' }}
+            <br/>
+            <!-- CLP - Chilean Peso -->
+            Valor factura: {{totalBill | currency:'CLP'}}
+            <br/>
+            Redeondeo Número: {{totalBill | number:'1.0-0'}}
+            <br/>
+            Mayúsculas: {{text | uppercase}}
+              </h3>
+					</div> <!-- close card back content -->
+				</div> <!-- close card back -->
+
+			</div> <!-- close card -->
+		</div> <!-- close cardContainer -->
+	</div>
+
+</div>
